@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html class="seo">
+	<head><title>MeowHype's Es Corander Dragons - </title>
+	<meta name="author" content="Nathan SoreThumb Bedrick" />
+	<meta name="description" content="MeowHype is a big fan of Es Corander Estates' Dragon breeds.  So, she has a site set up so you can review her dragon collection, & possibly more!" />
+	<meta name="keywords" content="MeowHype, Meow Hype, Es Corander, Dragon, Blitzava, breeding, breed, stud, Leaf, Dragon, Wave, Fire, Forest, Rare" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="icon" href="img/favico.png" type="image/png"/>
+	<link rel="shortcut icon" href="img/favico.png" type="image/png"/>
+	<meta property="og:image" content="img/fb-shareimg.jpg" />
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<![endif]-->
+	<link rel="stylesheet" href="style.css" type="text/css"/>
+	<script src="js/respond.min.js" type="text/javascript"></script>
+<body>
+	<div id="container">
+		<div id="dragonData">
+			<div id="dragonUndo">
+				<div id="fwBackNav">
+					<div id="prevState" data-bind="click: undoBack">&#x25C0;</div>
+					<div id="currStatus">
+						<span data-bind="text: undoIndex">1</span> of <input data-bind="value: undoMax" class="shortBox"/>
+					</div>
+					<div id="nextState" data-bind="click: undoForward">&#x25B6;</div>
+				</div>
+				<ul id="barNav" data-bind="foreach: undoBoth, attr: {'class': undoClass}">
+					<li data-bind="click: $root.undoTo, attr: {'class': $root.undoLight }"></li>
+				</ul>
+			</div>
+			<div id="dragonFilter">
+				<ul></ul>
+			</div>
+			<div id="dragons" data-bind="foreach: sortedDragons">
+				<div class="dragonBox border " data-bind="attr: {'class': images.classSneak}">
+					<div class="dragIMGs inline"><img src="" class="main" data-bind="attr: {'src': images.active}"/>
+						<span data-bind="foreach: images">
+							<a class="small"  data-bind="click: $parents[0].changeImg" ><img src=""  data-bind="attr: {'src': $data }"/></a>
+						</span>
+					</div>
+					<div class="inline notImages">
+						<h1 class="name" data-bind="text: name, click: $parent.editDragon"></h1>
+						<h3><span class="breed" data-bind="text: breed"></span>
+							<span class="species" data-bind="text: species"></span></h3>
+						<h3><span class="color" data-bind="text: colorGene"></span>:  
+							<span class="genes colorGeneVal" data-bind="text: colorGeneVal">YyrrBb</span>  <span class="seasonmate" data-bind="text: seasonmate.formatted"></span></h3>
+						<h3>(Breeded: <span class="totalmates" data-bind="text: totalmates.formatted"></span>) - EggNum: <span class="eggnum" data-bind="text: eggnum"></span></h3>
+						<a href="#" class="readMoreGenes">Click to expand</a>
+					</div>
+					<div class="additionalGenes notImages" data-bind="foreach: geneSets" >
+						<div class="inline fiftyPWidth">
+							<h3 data-bind="text: geneSetName"></h3>
+							<dl data-bind="foreach: nowGenes">
+								<dt data-bind="text: gene"></dt>
+								<dd data-bind="text: geneVal, class: geneRowCalc"></dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="workbench" data-bind="with: activeDragon">
+				<div class="" >
+					<div class="">
+						<span data-bind="foreach: images">
+							<img src=""  data-bind="attr: {'src': $data }"/><input type="text" data-bind="value: $data" />
+						</span>
+					</div>
+					<div class="inline">
+						<h1 class="name"><label for="name">Name:</label><input type="text" data-bind="value: name"/</h1>
+						<h3><label for="eggnum">EggNum:</label><input class="input-eggnum" data-bind="value: eggnum" type="text" /></h3>
+						<h3><label for="sex">Sex:</label><select class="input-sex" data-bind="value: sex, options: $root.sexes" type="text" ></select></h3>
+						<h3><label for="sex">Rarity:</label><select class="input-rarity" data-bind="options: $root.rarities, value: rarity, optionText: 'dragonType'" type="text" ></select></h3>
+						<h3><label for="breed">Breed:</label><input data-bind="value: breed" type="text"/>
+							<label for="species">Species:</label><input class="species-input" data-bind="value: species" type="text"/>
+							</h3>
+						<h3><span class="color"><label for="color">Color:</label><input type="text" data-bind="value: colorGene"/></span>:  
+							<span class="genes colorGeneVal"><label for="colorGeneVal">Color Gene Val:</label><input type="text" data-bind="value: colorGeneVal"/></span></h3>
+						<h3><label for="matesIn">Mates this Season:</label>
+							<input type="text" class="input-seasonmate shortBox" data-bind="value: seasonmate" /></h3>
+						<h3><label for="mates">Total Mates:</label>
+							<input type="text" class="input-totalmates shortBox" data-bind="value: totalmates" /> out of <input type="text" class="input-maxMateable shortBox" data-bind="value: maxMateable" /> Max</h3> 
+					</div>
+					<h3>Advanced Genes</h3>
+					<div data-bind="visible: geneSets.available().length != 0">
+						<h5>Add this Gene Set:
+						<select data-bind="options: geneSets.available, value: geneSets.toCreate"></select>
+						<a href="#" data-bind="click: addGeneSet">(+)</a></h5>
+					</div>
+					<div class="additionalGenes" data-bind="foreach: geneSets" >
+						<div class="inline fiftyPWidth">
+							<h3><label for="geneSetName" data-bind="text: geneSetName"></label> <a href="#" data-bind="click: $parent.deleteGeneSet">Delete</a></h3>
+							<dl data-bind="foreach: nowGenes">
+								<dt><a href="#" data-bind="click: $parent.deleteGene">(x)</a>  <span data-bind="text: gene"></span></dt>
+								<dd data-bind="class: geneRowCalc"><input type="text" data-bind="value: geneVal"/>
+									</dd>
+							</dl>
+							<div class="addGene" data-bind="visible: nowGenes.available().length != 0">
+								<select data-bind="options: nowGenes.available, value: nowGenes.toMake"></select>
+								<button data-bind="click: addGene">Add --&gt;</button>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+		
+		
+		</div>
+	</div>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" type="text/javascript"></script>
+	<script src="js/jquery.tinysort.min.js" type="text/javascript"></script>
+	<script src="js/jquery.tinysort.charorder.min.js" type="text/javascript"></script>
+	<script src="js/knockout-2.2.0.js" type="text/javascript"></script>
+	<script src="dragons.js" type="text/javascript"></script>
+</body></html>

@@ -1,0 +1,223 @@
+
+.inline { display: inline-block; vertical-align: top; }
+h1, h2, h3, h4, h5 { padding: 0px; margin: 0px; }
+
+html, body { padding: 0px; margin: 0px; }
+html, body { height: 100%; 
+	overflow-x: hidden;
+	min-width: 720px;
+}
+
+div#container {
+	height: 100%; width: 100%;
+	position: relative;
+	text-align: center;
+}
+
+.border { border: 1px solid black; }
+#top {
+	position: fixed;
+	width: 720px;
+}
+#dragonFilter { 
+	text-transform: capitalize; 
+	color: white;
+}
+#dragonFilter ul,
+#dragonFilter ul > li {
+	list-style-type: none;
+	padding: 0px; margin: 0px;
+}
+#dragonFilter ul li {
+	display: inline-block; 
+	list-style-type: none;
+	cursor: pointer; cursor: hand;
+	padding: 5px;
+}
+
+
+#dragonData {
+	width: 365px;
+	position: fixed;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+#dragonUndo {
+	position: fixed;
+	top: 0px; left: 0px;
+	width: 342px; height: 50px;
+	background: black; z-index: 1;
+	color: white;
+}
+#dragonFilter {
+	position: fixed;
+	top: 50px; left: 0px;
+	width: 342px; height: 95px;
+	background: black;
+	z-index: 1;
+}
+
+
+
+
+#dragonUndo #fwBackNav div { display: inline-block; }
+
+#dragonUndo #prevState,
+#dragonUndo #nextState { cursor: pointer; color: #444; }
+#dragonUndo #prevState:hover,
+#dragonUndo #nextState:hover { color: white; }
+#dragonUndo ul,
+#dragonUndo ul li {
+	list-style-type: none; padding: 0px; margin: 0px;
+}
+#dragonUndo ul li {
+	display: inline-block; height: 10px; width: 5px; background: #444; 
+	padding: 1px;
+}
+#dragonUndo ul li:hover { background: #CCC; cursor: pointer; }
+#barNav.active-is-0 :nth-child(0),
+#barNav.active-is-1 :nth-child(1),
+#barNav.active-is-2 :nth-child(2),
+#barNav.active-is-3 :nth-child(3),
+#barNav.active-is-4 :nth-child(4),
+#barNav.active-is-5 :nth-child(5),
+#barNav.active-is-6 :nth-child(6),
+#barNav.active-is-7 :nth-child(7),
+#barNav.active-is-8 :nth-child(8),
+#barNav.active-is-9 :nth-child(9),
+#barNav.active-is-10 :nth-child(10),
+#barNav.active-is-11 :nth-child(11),
+#barNav.active-is-12 :nth-child(12),
+#barNav.active-is-13 :nth-child(13),
+#barNav.active-is-14 :nth-child(14),
+#barNav.active-is-15 :nth-child(15),
+#barNav.active-is-16 :nth-child(16),
+#barNav.active-is-17 :nth-child(17),
+#barNav.active-is-18 :nth-child(18),
+#barNav.active-is-19 :nth-child(19),
+#barNav.active-is-20 :nth-child(20),
+#barNav.active-is-21 :nth-child(21) {  
+	padding: 0px; border: 1px solid white; background: #666; }
+
+
+
+.dragonClass {
+	width: 345px; white-space: normal;
+}
+#dragons {
+	position: relative;
+	margin: 150px auto 0px auto;
+}
+.dragonScroll {
+	white-space: nowrap;
+	margin-top: 200px;
+	text-align: left; 
+}
+.dragonBox { 
+	height: auto; overflow: hidden; max-height: 100px;
+	width: 330px; padding: 5px;
+	transition: max-height 0.5s;
+	-o-transition: max-height 0.5s;
+	-moz-transition: max-height 0.5s;
+	-webkit-transition: max-height 0.5s;
+	text-align: left;
+	margin-bottom: 10px;
+	position: relative;
+}
+.dragonBox .additionalGenes { display: none; }
+.fiftyPWidth { width: 48%; }
+.dragonBox h1.name {
+	cursor: pointer; cursor: hand;
+}
+.dragonBox:hover h1 {
+	text-decoration: underline;
+}
+.dragonBox h1.name:hover {
+	text-decoration: underline; color: blue;
+}
+
+.additionalGenes h3 { text-transform: capitalize; }
+.additionalGenes dl { margin: 0px; }
+
+.dragonBox dl dt {
+	float: left; margin-right: 10px; width: 100px; clear: both; 
+	
+}
+.dragonBox.full { max-height: 500px; }
+.dragonBox.full  .additionalGenes { display: block; }
+.dragonBox::after {
+	font-size: 2.0em; font-weight: bold;
+	opacity: 0.3; position: absolute; top: 0px; right: 0px;
+}
+.dragonBox.female::after { content: "\2640"; }
+.dragonBox.male::after { content: "\2642"; }
+
+.dragIMGs { 
+	width: 105px; 
+	padding-bottom: 5px;
+}
+.dragIMGs a { 
+	display: inline-block; 
+}
+.dragIMGs .main { 
+	width: 75px; height: 75px; margin-right: 5px; 
+	float: left; 
+}
+.dragIMGs .small {
+	width: 20px; margin-bottom: 5px;
+	height: 20px; border: 1px solid black; 
+}
+.dragIMGs .lastIMG {
+	margin-bottom: 0px; 
+}
+
+.dragonBox h1 { font-size: 1.2em; }
+.dragonBox h2 { font-size: 1em; }
+.dragonBox h3 { font-size: 0.9em; }
+.dragonBox h4 { font-size: 0.7em; }
+.dragonBox h5 { font-size: 0.7em; }
+
+#dragonData.filtered .dragonBox { display: none; }
+#dragonData.filtered.benign-white .dragonBox.benign-white,
+#dragonData.filtered.dilute .dragonBox.dilute,
+#dragonData.filtered.starburst .dragonBox.starburst,
+#dragonData.filtered.genes-eye-color .dragonBox.genes-eye-color,
+#dragonData.filtered.fan .dragonBox.fan,
+#dragonData.filtered.split-tail .dragonBox.split-tail,
+#dragonData.filtered.wings-a .dragonBox.wings-a,
+#dragonData.filtered.wings-b .dragonBox.wings-b,
+#dragonData.filtered.wings-c .dragonBox.wings-c { 
+	 display: block; 
+}
+#dragonFilter li.sorted::after {
+	content: "\25BE";
+	vertical-align: sub; font-size: 0.8em;
+}
+#dragonFilter li.sorted.ascending::after {
+	content: "\25B4";
+}
+
+
+#workbench {
+	margin-left: 380px;
+	text-align: left;
+}
+#workbench input { margin-left: 10px; }
+.max-mates { margin-left: 5px; }
+.input-eggnum { width: 100px; }
+.shortBox { width: 25px; margin-right: 10px;}
+
+#workbench dl dt {
+	float: left; width: 110px;
+	clear: both; margin-right: 10px;
+}
+#workbench dl dd input {
+	width: 30px;
+}
+.addGene {
+	clear: both;
+}
+
+#templates { display: none; }

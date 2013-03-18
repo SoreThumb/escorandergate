@@ -1,0 +1,134 @@
+{
+	"maxMateable": {
+		"commmon": 10,
+		"uncommon": 5,
+		"super-rare": 3
+	},
+	"sexes": [ "male","female" ],
+	"rarities": [ "common", "uncommon", "super-rare" ],
+	"geneSets": {
+		"geneSets":["patterns","physical"],
+		"genesTherein":	{
+			"patterns": ["Benign White", "Dilute","Eye Color","Starburst"],
+			"physical": ["Fan","Split Tail","Wings (A Type)","Wings (B Type)","Wings (C Type)"]
+		}
+	},
+	"dragonSet": [
+		{
+			"name": "Name",
+			"eggnum": "FF125",
+			"sex": "male",
+			"seasonmate": 1,
+			"totalmates": 0,
+			"maxMateable": 10,
+			"rarity": "common",
+			"images": ["img/d-ff125-01.jpg","img/d-ff125-02.jpg","img/d-ff125-03.jpg"],
+			"breed": "Clay Nesting",
+			"species": "Dirt Dragon",
+			"colorGene": "Green",
+			"colorGeneVal": "YyrrBb",
+			"geneSets": [
+				{	"geneSetName":"patterns",
+					"nowGenes":	[
+							{"gene": "Benign White",
+							 "geneVal":"XX"},
+							{"gene": "Dilute",
+							 "geneVal":"xx"},
+							{"gene": "Eye Color",
+							 "geneVal":"BB"}
+						]
+					},
+				{	"geneSetName":"physical",
+					"nowGenes": [
+							{"gene": "Fan",
+							 "geneVal":"XX"},
+							{"gene": "Split Tail",
+							 "geneVal":"Xx"},
+							{"gene": "Wings (A Type)",
+							 "geneVal":"Xx"}
+						]
+					}
+			],
+			"parents" : {
+			},
+			"children" : [
+				"FF143"
+			]
+		
+		},
+		{
+			"name": "FooBar",
+			"eggnum": "FF156",
+			"sex": "female",
+			"seasonmate": 1,
+			"totalmates": 0,
+			"maxMateable": 10,
+			"rarity": "common",
+			"images": ["img/d-ff156-01.jpg","img/d-ff156-02.jpg","img/d-ff156-03.jpg"],
+			"breed": "Common",
+			"species": "Fire Dragon",
+			"colorGene": "Orange",
+			"colorGeneVal": "YyRrbb",
+			"geneSets": [
+				{	"geneSetName":"patterns",
+					"nowGenes": [
+						{"gene": "Benign White",
+						 "geneVal":"XX"},
+						{"gene": "Dilute",
+						 "geneVal":"xx"},
+						{"gene": "Eye Color",
+						 "geneVal":"BB"}
+					]
+				},
+				{	"geneSetName":"physical",
+					"nowGenes": [
+						{"gene": "Fan",
+						 "geneVal":"XX"},
+						{"gene": "Split Tail",
+						 "geneVal":"Xx"},
+						{"gene": "Wings (A Type)",
+						 "geneVal":"Xx"}
+					]
+				}
+			],
+			"parents" : { },
+			"children" : [
+				"FF143"
+			]
+		
+		},
+		{
+			"name": "Another",
+			"eggnum": "FF143",
+			"sex": "male",
+			"seasonmate": 5,
+			"totalmates": 0,
+			"maxMateable": 10,
+			"rarity": "common",
+			"images": ["img/d-ff143-01.jpg","img/d-ff143-02.jpg","img/d-ff143-03.jpg"],
+			"breed": "Tidal Pool Dwelling",
+			"species": "Wave Dragon",
+			"colorGene": "Yellow",
+			"colorGeneVal": "Yyrrbb",
+			"geneSets": [
+				{	"geneSetName":"patterns",
+					"nowGenes": [
+						{"gene": "Benign White",
+						 "geneVal":"Xx"},
+						{"gene": "Eye Color",
+						 "geneVal":"BB"},
+						{"gene": "Starburst",
+						 "geneVal":"Xx"}
+					]
+				}
+			],
+			"parents" : { 
+				"mom":"FF156",
+				"dad":"FF125"
+			},
+			"children" : [
+			]
+		
+		}
+	]
+}
